@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan - Teaching Portfolio</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <div class="nav-container">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">Rhykomall</a>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="philosophy.html">Philosophy</a>
+                    <a class="nav-link" href="reflection.html">Reflection</a>
+                    <a class="nav-link" href="cv.html">CV</a>
+                    <a class="nav-link active" href="lesson-plan.html">Lesson Plan</a>
+                    <a class="nav-link" href="assessment.html">Assessment</a>
+                    <a class="nav-link" href="tlms.html">TLMs</a>
+                    <a class="nav-link" href="pictures-videos.html">Pictures & Videos</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Lesson Plan Section -->
+    <div class="container mt-5">
+        <h2 class="highlight">Lesson Plans</h2>
+        <p>
+            Here are my lesson plans, which outline the objectives, materials, and activities for my classes. Each lesson plan is designed to engage students and support their learning goals.<br>Click on a lesson plan to view it:</p>
+        
+        <div class="row">
+            <!-- First PDF Link -->
+            <div class="col-lg-4 mb-3">
+                
+                <a href="#" class="view-pdf" data-pdf="lessonNotes\2ND WEEK.pdf">View Lesson Plan 1</a>
+            </div>
+            <!-- Second PDF Link -->
+            <div class="col-lg-4 mb-3">
+                
+                <a href="#" class="view-pdf" data-pdf="lessonNotes\3RD WEEK.pdf">View Lesson Plan 2</a>
+            </div>
+            <!-- Third PDF Link -->
+            <div class="col-lg-4 mb-3">
+                
+                <a href="#" class="view-pdf" data-pdf="lessonNotes\4TH WEEK.pdf">View Lesson Plan 3</a>
+            </div>
+            <!-- Fourth PDF Link -->
+            <div class="col-lg-4 mb-3">
+                
+                <a href="#" class="view-pdf" data-pdf="lessonNotes\5TH WEEK.pdf">View Lesson Plan 4</a>
+            </div>
+            <!-- Fifth PDF Link -->
+            <div class="col-lg-4 mb-3">
+                
+                <a href="#" class="view-pdf" data-pdf="lessonNotes\6TH WEEK.pdf">View Lesson Plan 5</a>
+            </div>
+            <!-- Sixth PDF Link -->
+            <div class="col-lg-4 mb-3">
+               
+                <a href="#" class="view-pdf" data-pdf="lessonNotes\SCHEME OF WORK.pdf">View Lesson Plan 6</a>
+            </div>
+        </div>
+
+        <!-- Embedded PDF Viewer -->
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="pdf-viewer" class="embed-responsive-item" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to handle PDF viewing
+        document.querySelectorAll('.view-pdf').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pdfViewer = document.getElementById('pdf-viewer');
+                pdfViewer.src = this.dataset.pdf;
+
+                // Error handling for missing PDFs
+                pdfViewer.onerror = function() {
+                    alert('The requested PDF could not be loaded. Please check the file path and try again.');
+                    pdfViewer.src = '';
+                };
+            });
+        });
+    </script>
+</body>
+</html>
